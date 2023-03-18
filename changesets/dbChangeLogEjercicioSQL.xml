@@ -1,0 +1,43 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="user (generated)" id="1679107794007-1">
+        <createTable tableName="EMPLOYEES">
+            <column autoIncrement="true" name="IDEMPLOYEES" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_4"/>
+            </column>
+            <column name="NAMEEMPLOYEE" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EMAILEMPLOYEE" type="VARCHAR(50)"/>
+            <column name="PHONEEMPLOYEE" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ADDRESSEMPLOYEE" type="VARCHAR(50)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="user (generated)" id="1679107794007-2">
+        <createTable tableName="STORE">
+            <column autoIncrement="true" name="IDSTORE" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_4B"/>
+            </column>
+            <column name="NAMESTORE" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ADDRESSSTORE" type="VARCHAR(50)"/>
+            <column name="TYPESTORE" type="VARCHAR(50)"/>
+            <column name="CITY" type="VARCHAR(30)"/>
+            <column name="PHONESTORE" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="user (generated)" id="1679107794007-3">
+	<createProcedure encoding="utf8" procedureName="spConsulta">
+		CREATE PROCEDURE spConsulta
+          AS
+          BEGIN
+            SELECT * FROM Store
+          END;
+    </createProcedure>
+</changeSet>
+</databaseChangeLog>
